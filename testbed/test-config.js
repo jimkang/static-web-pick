@@ -29,6 +29,7 @@ module.exports = {
     `,
     generateRSS: true,
     archiveBaseURL: 'https://jimkang.com/cherry-pick-test',
+    mediaDir: 'https://smidgeo.com/notes/deathmtn/media',
     rssFeedOpts: {
       feed_url: 'https://jimkang.com/cherry-pick-test/rss/index.rss',
       site_url: 'https://jimkang.com/cherry-pick-test/',

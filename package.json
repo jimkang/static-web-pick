@@ -22,7 +22,7 @@
     "eslint": "^7.24.0"
   },
   "dependencies": {
-    "@jimkang/static-web-archive": "^6.3.0",
+    "@jimkang/static-web-archive": "^6.4.0",
     "d3-queue": "^3.0.7",
     "oknok": "^3.0.0"
   }

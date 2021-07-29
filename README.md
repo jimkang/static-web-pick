@@ -4,7 +4,7 @@ A tool that lets you build a static weblog cherry picking specific entries from 
 
 ## Why
 
-Say you've been using [static-web-archive](https://github.com/jimkang/static-web-archive)as your blog platform and now have thousands of entries. You want to start another smaller blog that includes just a handful of those entries. Fortunately, static-web-archive keeps a JSON file with everything needed to create an entry in a directory, usually `meta/`.
+Say you've been using [static-web-archive](https://github.com/jimkang/static-web-archive) as your blog platform and now have thousands of entries. You want to start another smaller blog that includes just a handful of those entries. Fortunately, static-web-archive keeps a JSON file with everything needed to create an entry in a directory, usually `meta/`.
 
 With this tool, you can create a list of the entries you want in this second blog, then tell the tool to build a new site, complete with RSS, if you want it.
 
