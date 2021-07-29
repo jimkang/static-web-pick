@@ -1,13 +1,12 @@
 {
   "name": "static-web-pick",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build a static web site by picking specific entries from an existing static-web-archive.",
   "main": "static-web-pick.js",
   "bin": {
     "swpick": "./static-web-pick.js"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:jimkang/static-web-pick.git"
