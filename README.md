@@ -10,11 +10,11 @@ With this tool, you can create a list of the entries you want in this second blo
 
 ## Installing
 
-    npm i -g static-web-pick
+    npm i -g static-web-pick --registry https://npm.pkg.github.com/jimkang
 
 ## Usage
 
-    static-web-pick <path to config file> <directory with meta files> <path to JSON list of ids>
+    swpick <path to config file> <directory with meta files> <path to JSON list of ids>
 
 ### Parameters
 

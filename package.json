@@ -2,10 +2,11 @@
   "name": "static-web-pick",
   "version": "1.0.1",
   "description": "Build a static web site by picking specific entries from an existing static-web-archive.",
-  "main": "cherry-pick-site.js",
+  "main": "static-web-pick.js",
+  "bin": {
+    "swpick": "./static-web-pick.js"
+  },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w"
   },
   "repository": {
     "type": "git",
