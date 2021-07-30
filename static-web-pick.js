@@ -19,8 +19,12 @@ const configPath = process.argv[2];
 const metaDir = process.argv[3];
 const idsFilePath = process.argv[4];
 
-var config = require('./' + configPath);
-var ids = require('./' + idsFilePath);
+var config = require(configPath.startsWith('/')
+  ? configPath
+  : './' + configPath);
+var ids = require(idsFilePath.startsWith('/')
+  ? idsFilePath
+  : './' + idsFilePath);
 
 var archiveStream = StaticWebArchive(config.archiveOpts);
 archiveStream.on('error', logError);
