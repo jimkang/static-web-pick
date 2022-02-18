@@ -1,6 +1,6 @@
 {
   "name": "static-web-pick",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Build a static web site by picking specific entries from an existing static-web-archive.",
   "main": "static-web-pick.js",
   "bin": {
