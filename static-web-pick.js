@@ -26,18 +26,22 @@ var ids = require(idsFilePath.startsWith('/')
   ? idsFilePath
   : './' + idsFilePath);
 
-var archiveStream = StaticWebArchive(config.archiveOpts);
-archiveStream.on('error', logError);
-var q = queue(4);
+//var archiveStream = StaticWebArchive(config.archiveOpts);
+//archiveStream.on('error', logError);
+//var q = queue(1);
+//ids.forEach((id) => q.defer(addEntry, id));
+//q.awaitAll(oknok({ ok: endStream, nok: logError }));
+
+var q = queue(1);
 ids.forEach((id) => q.defer(addEntry, id));
-q.awaitAll(oknok({ ok: endStream, nok: logError }));
+q.awaitAll(oknok({ ok: () => console.log('Site built.'), nok: logError }));
 
-function endStream() {
-  console.log('Site built.');
-  archiveStream.end();
-}
-
+// We're creating and destroying an archive for every single entry
+// because static-web-archive has a bug probably related to it updating
+// the last page record text file only once during a run. TODO: Verify that.
 function addEntry(id, done) {
+  var archiveStream = StaticWebArchive(config.archiveOpts);
+  archiveStream.on('error', logError);
   fs.readFile(
     path.join(metaDir, id + '.json'),
     { encoding: 'utf8' },
@@ -45,8 +49,10 @@ function addEntry(id, done) {
   );
 
   function writePack(text) {
-    archiveStream.write(JSON.parse(text));
-    done();
+    var pack = JSON.parse(text);
+    console.log('Writing', pack);
+    archiveStream.write(pack);
+    archiveStream.end(() => setTimeout(done, 200));
   }
 }
 
